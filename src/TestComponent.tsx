@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-export const Child = styled.div({
-  color: "blue",
-});
+const Child = styled.div`
+  color: red;
+`;
 
-export const Parent = styled.div({
-  color: "green",
-  [Child as any]: {
-    color: "orange",
-  },
-});
+const Parent = styled.div`
+  ${Child} {
+    color: green;
+  }
+`;
 
 export const TestComponent: React.FC = () => {
   return (
