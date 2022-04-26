@@ -1,29 +1,14 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 
-export const checkTransientProps =
-  (cssItems: string | string[]) => (props: string) => {
-    if (Array.isArray(cssItems)) {
-      return !cssItems.includes(props);
-    }
-    return props !== cssItems;
-  };
-
-export const StyledCatalogHeader = styled("div", {
-  shouldForwardProp: checkTransientProps("colors"),
-})`
-  position: relative;
+export const StyledCatalogHeader = styled("div")`
+  color: blue;
 `;
 
 export const StaticWrapper = styled("div")`
-  display: flex;
-  overflow: hidden;
-  flex-flow: column;
-  width: 100%;
-  height: calc(100vh - 6rem);
+  color: green;
   ${StyledCatalogHeader} {
-    padding: 0 1.6rem 1.6rem 1.6rem;
-    margin: 0 -1.6rem;
+    color: orange;
   }
 `;
 
