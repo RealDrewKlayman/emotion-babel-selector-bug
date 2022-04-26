@@ -1,22 +1,22 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
+import styled from "@emotion/styled";
 
-export const StyledCatalogHeader = styled("div")`
-  color: blue;
-`;
+export const Child = styled.div({
+  color: "blue",
+});
 
-export const StaticWrapper = styled("div")`
-  color: green;
-  ${StyledCatalogHeader} {
-    color: orange;
-  }
-`;
+export const Parent = styled.div({
+  color: "green",
+  [Child as any]: {
+    color: "orange",
+  },
+});
 
 export const TestComponent: React.FC = () => {
   return (
-    <StaticWrapper>
-      <StyledCatalogHeader>Hi</StyledCatalogHeader>
-    </StaticWrapper>
+    <Parent>
+      <Child>Hi</Child>
+    </Parent>
   );
 };
 
